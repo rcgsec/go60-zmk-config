@@ -410,7 +410,8 @@
             bindings = <&kp LS(SEMI)>
                 , <&kp F>
                 , <&kp M>
-                , <&kp T>;
+                , <&kp T>
+                , <&kp RET>;
         };
 
         hx_rename: hx_rename {
@@ -458,6 +459,33 @@
     };
 };
 
+/ {
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < 11 12 24 >; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < 6 29 >; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
+    };
+};
+
 /* Automatically generated keymap */
 / {
     keymap {
@@ -466,9 +494,9 @@
 
         layer_Base {
             bindings = <
- &mt LALT GRAVE  &kp N1  &kp N2  &kp N3         &kp N4  &kp N5                                                               &kp N6         &kp N7     &kp N8   &kp N9    &kp N0  &mt RALT EQUAL
-       &kp LGUI   &kp Q   &kp W   &kp F          &kp P   &kp B                                                                &kp J          &kp L      &kp U    &kp Y  &kp SEMI   &mt RGUI BSLH
-  &mt LCTRL ESC   &kp A   &kp R   &kp S          &kp T   &kp G                                                                &kp M          &kp N      &kp E    &kp I     &kp O   &mt RCTRL SQT
+ &hml LALT GRAVE  &kp N1  &kp N2  &kp N3         &kp N4  &kp N5                                                               &kp N6         &kp N7     &kp N8   &kp N9    &kp N0  &hmr RALT EQUAL
+       &kp LGUI   &kp Q   &kp W   &kp F          &kp P   &kp B                                                                &kp J          &kp L      &kp U    &kp Y  &kp SEMI   &hmr RGUI BSLH
+ &hml LCTRL ESC   &kp A   &kp R   &kp S          &kp T   &kp G                                                                &kp M          &kp N      &kp E    &kp I     &kp O   &hmr RCTRL SQT
   &mo LAYER_Nav   &kp Z   &kp X   &kp C          &kp D   &kp V                                                                &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH   &mo LAYER_Nav
                           &none   &none  &mo LAYER_Sym                                                                               &mo LAYER_Sym      &none    &none
                                                                 &kp LSHFT  &spunds    &kp TAB  &kp RET  &kp BSPC  &kp RSHFT
