@@ -532,7 +532,7 @@
       &trans   &hx_prev_err   &hx_next_err    &kp LC(O)     &hx_goto  &hx_refs                                                         &none        &kp N4      &kp N5        &kp N6         &none        &none
       &trans  &hx_prev_type  &hx_next_type  &hx_prev_fn  &hx_next_fn    &trans                                                         &none        &kp N1      &kp N2        &kp N3         &none       &trans
                               &out OUT_USB        &none       &trans                                                                                &trans      &kp N0         &none
-                                                                                 &none   &none   &none   &none   &none   &none
+                                                                                 &none   &none   &none   &rgb_ug RGB_TOG   &none   &none
             >;
         };
 
