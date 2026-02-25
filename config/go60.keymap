@@ -426,13 +426,37 @@
 /* Automatically generated behavior definitions */
 / {
     behaviors {
-
-
+        spunds: space_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp LS(MINUS)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
 /* Automatically generated combos definitions */
+/ {
+    combos {
+        compatible = "zmk,combos";
 
+        combo_caps_word {
+            key-positions = <POS_LH_T1 POS_RH_T1>;
+            bindings = <&caps_word>;
+            layers = <LAYER_Base>;
+        };
+    };
+};
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+};
 
 /* Automatically generated keymap */
 / {
@@ -447,7 +471,7 @@
   &mt LCTRL ESC   &kp A   &kp R   &kp S          &kp T   &kp G                                                                &kp M          &kp N      &kp E    &kp I     &kp O   &mt RCTRL SQT
   &mo LAYER_Nav   &kp Z   &kp X   &kp C          &kp D   &kp V                                                                &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH   &mo LAYER_Nav
                           &none   &none  &mo LAYER_Sym                                                                               &mo LAYER_Sym      &none    &none
-                                                                &kp LSHFT  &kp SPACE  &kp TAB  &kp RET  &kp BSPC  &kp RSHFT
+                                                                &kp LSHFT  &spunds    &kp TAB  &kp RET  &kp BSPC  &kp RSHFT
             >;
         };
 
