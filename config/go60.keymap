@@ -433,6 +433,12 @@
             bindings = <&kp SPACE>, <&kp LS(MINUS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        bsdel: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 };
 
@@ -499,7 +505,7 @@
  &hml LCTRL ESC   &kp A   &kp R   &kp S          &kp T   &kp G                                                                &kp M          &kp N      &kp E    &kp I     &kp O   &hmr RCTRL SQT
   &mo LAYER_Nav   &kp Z   &kp X   &kp C          &kp D   &kp V                                                                &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH   &mo LAYER_Nav
                           &none   &none  &mo LAYER_Sym                                                                               &mo LAYER_Sym      &none    &none
-                                                                &kp LSHFT  &spunds    &kp TAB  &kp RET  &kp BSPC  &kp RSHFT
+                                                                &kp LSHFT  &spunds    &kp TAB  &kp RET  &bsdel     &kp RSHFT
             >;
         };
 
