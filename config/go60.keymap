@@ -513,7 +513,7 @@
        &kp LGUI   &kp Q   &kp W   &kp F          &kp P   &kp B                                                                &kp J          &kp L      &kp U    &kp Y  &kp SEMI   &kp BSLH
  &hml LCTRL ESC   &kp A   &kp R   &kp S          &kp T   &kp G                                                                &kp M          &kp N      &kp E    &kp I     &kp O   &hmr RCTRL SQT
   &mo LAYER_Nav   &kp Z   &kp X   &kp C          &kp D   &kp V                                                                &kp K          &kp H  &kp COMMA  &kp DOT  &kp FSLH   &mo LAYER_Nav
-                          &LALT   &LGUI  &mo LAYER_Sym                                                                               &mo LAYER_Sym      &RGUI    &RALT
+                          &kp LALT &kp LGUI  &mo LAYER_Sym                                                                               &mo LAYER_Sym      &kp RGUI    &kp RALT
                                                                 &kp LSHFT  &spunds    &kp TAB  &kp RET  &bsdel     &kp RSHFT
             >;
         };
